@@ -1,9 +1,11 @@
 :root {
-  --purple: #6a39ff;
-  --lime: #d8ff47;
+  --purple: #5d2cfb;
+  --lime: #ecff7a;
   --dark: #064726;
-  --border-radius: 22px;
-  --page-bg: #f3f4ff;
+  --border-radius: 40px;
+  --page-bg: #fff;
+
+    --bottom-h-padding: 60px; 
 }
 
 * {
@@ -34,25 +36,30 @@ body {
   gap: 10mm;
 }
 
+/* الكارت كله */
 .card-main {
   background: #fff;
   border-radius: var(--border-radius);
   border: 2px solid var(--purple);
-  overflow: hidden;
+  overflow: hidden; /* يمنع أي حاجة تطلع بره الكارت */
   display: flex;
   flex-direction: column;
 }
 
+/* الجزء البنفسجي */
 .card-main-top {
+  position: relative;
+  z-index: 2;
   background: var(--purple);
   color: #fff;
   padding: 22px 30px;
-  border-bottom: 0;
   display: grid;
   grid-template-columns: 2.1fr 1.3fr;
   column-gap: 20px;
+  border-radius: var(--border-radius);
 }
 
+/* النصوص جوه البنفسجي */
 .card-main-top-left .hero-title {
   font-size: 24px;
   line-height: 1.25;
@@ -114,30 +121,28 @@ body {
   white-space: nowrap;
 }
 
-.contact-row {
-  color: var(--purple);
-  font-weight: 700;
-  font-size: 22px;
-  justify-content: center;
-}
-
+/* الشريط الأصفر */
 .card-main-middle {
+  position: relative;
+  z-index: 1;
   background: var(--lime);
   display: flex;
   justify-content: space-around;
-  padding: 12px 30px 16px;
+  padding: 14px 30px 18px;
   font-weight: 800;
   font-size: 22px;
   color: var(--purple);
+  border-radius: var(--border-radius);
+  margin-top: -9px; /* يدخل تحت البنفسجي من الجوانب */
 }
 
+/* باقي الكارت تحت */
 .card-main-bottom {
-  padding: 18px 30px 22px;
-  border-top: 2px solid var(--purple);
+  padding: 22px 40px 26px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  font-size: 20px;
+  gap: 0;
+  font-size: 22px;
   color: var(--dark);
   background: #fff;
 }
@@ -149,57 +154,72 @@ body {
   flex-wrap: wrap;
 }
 
+/* سطر أرقام التليفون */
+.contact-row {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--purple);
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* التظليل الأصفر للأرقام */
 .highlight-box {
   background: var(--lime);
-  padding: 4px 12px;
+  padding: 4px 18px;
   border-radius: 6px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
+/* الخطوط بين الأسطر */
+.section-line {
+  border-bottom: 2px solid var(--purple);
+  margin: 18px 0 18px;
+}
+
+/* العنوان الصيني */
 .address {
   font-weight: 700;
   line-height: 1.5;
   color: var(--dark);
+  font-size: 22px;
+  margin-bottom: 14px;
+  text-align: center;
+
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
+/* مواعيد العمل */
 .worktime {
-  margin-top: 3px;
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   color: #305adf;
+  margin: 0 0 16px;
+  text-align: center;
+
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
-.worktime span {
-  color: #305adf;
-}
-
+/* الأيقونات تحت */
 .icon-box {
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   background: var(--lime);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 6px;
-  font-size: 16px;
+  margin-right: 10px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--purple);
-}
-
-.globe-icon {
-  font-size: 15px;
-}
-
-.mail-icon {
-  font-size: 18px;
-}
-
-.blue-highlight {
-  background: #c5d9ff;
-  padding: 0 6px;
-  border-radius: 4px;
 }
 
 .footer-web {
@@ -208,55 +228,44 @@ body {
   justify-content: space-between;
   border-top: 2px solid var(--purple);
   padding-top: 12px;
-  margin-top: 6px;
-  font-size: 24px;
+  margin-top: 0;
+    padding-left: 0;
+  padding-right: 0;
 }
 
-.footer-web span {
+.footer-item {
   display: flex;
   align-items: center;
-  gap: 6px;
 }
 
-.circle-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  border: 2px solid var(--purple);
-}
-
+/* الكرت التاني (الـ notice) */
 .card-notice {
   background: #fff;
-  border-radius: var(--border-radius);
+  border-radius: 40px;
   border: 2px solid var(--purple);
-  padding: 22px 30px 26px;
+  padding: 24px 36px 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .card-notice-header {
   background: var(--lime);
-  margin: -22px -30px 18px;
-  padding: 14px 30px;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
-  font-size: 26px;
+  margin: -24px -36px 20px;
+  padding: 14px 36px;
+  border-radius: 40px 40px 0 0;
+  font-size: 24px;
   font-weight: 800;
   border-bottom: 2px solid var(--purple);
 }
 
-.card-notice .label-line {
-  border-bottom: 2px solid var(--dark);
-  padding-bottom: 6px;
-  margin-bottom: 8px;
-}
-
 .card-notice-row {
   font-size: 22px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 6px;
+  row-gap: 4px;
   align-items: baseline;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 
 .label {
@@ -275,12 +284,6 @@ body {
 .rtl {
   direction: rtl;
   font-family: "Segoe UI", system-ui, sans-serif;
-}
-
-.shipment-line {
-  flex: 1;
-  border-bottom: 2px solid var(--dark);
-  margin-left: 4px;
 }
 
 /* موبايل وتابلت */
@@ -311,22 +314,10 @@ body {
     padding: 18px 16px;
   }
 
-  .card-main-top-right {
-    text-align: left;
-  }
-
-  .card-main-top-left .hero-title {
-    font-size: 20px;
-  }
-
-  .card-main-top-left .sub {
-    font-size: 18px;
-    margin-top: 16px;
-  }
-
   .card-main-middle {
     font-size: 18px;
     padding: 10px 16px 12px;
+    margin-top: -24px;
   }
 
   .card-main-bottom {
@@ -334,39 +325,10 @@ body {
     font-size: 16px;
   }
 
-  .contact-row {
-    font-size: 18px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .address {
-    font-size: 16px;
-  }
-
-  .worktime {
-    font-size: 18px;
-  }
-
   .footer-web {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-    font-size: 18px;
-  }
-
-  .card-notice {
-    padding: 16px;
-    gap: 14px;
-  }
-
-  .card-notice-header {
-    font-size: 20px;
-    margin: -16px -16px 14px;
-    padding: 10px 16px;
-  }
-
-  .card-notice-row {
     font-size: 18px;
   }
 }
