@@ -1,10 +1,11 @@
 :root {
-  --purple: #5d2cfb;
-  --lime: #ecff7a;
-  --dark: #064726;
-  --border-radius: 40px;
-  --page-bg: #fff;
+  --purple: #5A2CF3;     
+  --lime: #E8FF6A;      
+  --dark: #1E3F2A;       
+  --border-radius: 38px;
+  --page-bg: #ffffff;
 }
+
 
 * {
   box-sizing: border-box;
@@ -46,7 +47,8 @@ body {
   display: grid;
   grid-template-columns: 2.1fr 1.3fr;
   column-gap: 20px;
-  border-radius: var(--border-radius);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+
   position: relative;
   z-index: 2;
 }
@@ -64,6 +66,7 @@ body {
 
 .hero-brand {
   font-weight: 800;
+  font-size: 24px;
 }
 .sub {
   margin-top: 26px;
@@ -118,7 +121,7 @@ body {
   margin-left: 0;
   margin-right: 0;
 
-  margin-top: -15px;
+  margin-top: -26px;
 
   padding: 26px 30px 20px;
 
@@ -136,7 +139,7 @@ body {
   justify-content: center;
   gap: 10px;
   font-size: 23px;
-  font-weight: 600;
+  font-weight: 645;
   color: var(--purple);
   margin-bottom: 12px;
 }
@@ -153,8 +156,8 @@ body {
 }
 
 .address {
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 19.5px;
+  font-weight: 800;
   text-align: center;
   margin-bottom: 14px;
 }
@@ -163,7 +166,7 @@ body {
   color: #305adf;
   text-align: center;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 800;
   margin-bottom: 18px;
 }
 
@@ -171,13 +174,25 @@ body {
   font-weight: 800;
 }
 
-.footer-web {
+.footer-web{
   font-size: 23px;
+  font-weight: 640;
   border-top: 2px solid var(--purple);
   padding-top: 14px;
-  display: flex;
-  justify-content: space-between;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
 }
+
+.footer-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
 
 .icon-box {
   background: var(--lime);
@@ -204,7 +219,7 @@ body {
   padding: 14px 36px;
   border-radius: 40px 40px 0 0;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 800;
   border-bottom: 2px solid var(--purple);
 }
 
@@ -228,4 +243,70 @@ body {
 
 .line {
   font-weight: 800;
+}
+
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 15mm;
+    box-shadow: none;
+    margin: 0 auto;
+    page-break-after: avoid;
+  }
+}
+
+.big{
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.yellow-letter {
+  color: var(--lime);
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;           
+}
+
+body {
+  background: #ddd;
+  display: block;          
+  padding: 40px 0;
+}
+
+.page {
+  width: 210mm;             
+  margin: 0 auto;           
+}
+
+@media (max-width: 210mm) {
+  body {
+    overflow-x: auto;
+  }
+  .page {
+    margin-left: 20px;      
+    margin-right: 20px;
+  }
+}
+
+
+.logo-express::first-letter{
+  color:#E8FF6A;
+  font-weight:900;
 }
